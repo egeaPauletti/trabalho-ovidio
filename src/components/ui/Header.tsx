@@ -26,7 +26,7 @@ export default function Header() {
                         </ul>
                     </nav>
                     <Link to={"/auth"}>
-                        <Button text="Entrar" isFilled />
+                        <Button text="Acessar" isFilled />
                     </Link>
                 </div>
             </header>
@@ -40,7 +40,7 @@ export default function Header() {
                     </div>
                     <div>
                         <Link to={"/auth"}>
-                            <Button text="Entrar" isFilled />
+                            <Button text="Acessar" isFilled />
                         </Link>
                     </div>
                 </div>
