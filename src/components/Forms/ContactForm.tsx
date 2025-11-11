@@ -51,9 +51,22 @@ export const ContactForm: React.FC = () => {
     setValue("cep", formatted);
   };
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Dados enviados:", data);
-  };
+  const onSubmit = async (data: ContactFormData) => {
+    const id = crypto.randomUUID();
+    const payload = { id, ...data };
+    const resp = await fetch("http://localhost:4000/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!resp.ok) {
+      const text = await resp.text().catch(() => "");
+      throw new Error(`POST /orders falhou: ${resp.status} ${resp.statusText} ${text}`); // [web:2]
+    }
+  }
 
   return (
     <form
