@@ -1,12 +1,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import type { ContactFormData } from "../../schemas/contactFormSchema";
 import { contactFormSchema } from "../../schemas/contactFormSchema";
 import Button from "../ui/Button";
-
-
-
 // Função de formatação para o CEP
 function normalizeCEP(value: string) {
   const digits = value.replace(/\D/g, "");
@@ -54,19 +52,33 @@ export const ContactForm: React.FC = () => {
   const onSubmit = async (data: ContactFormData) => {
     const id = crypto.randomUUID();
     const payload = { id, ...data };
-    const resp = await fetch("http://localhost:4000/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
 
-    if (!resp.ok) {
-      const text = await resp.text().catch(() => "");
-      throw new Error(`POST /orders falhou: ${resp.status} ${resp.statusText} ${text}`); // [web:2]
-    }
-  }
+    const submitPromise = (async () => {
+      const resp = await fetch("http://localhost:4000/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }); // [web:30]
+
+      if (!resp.ok) {
+        const text = await resp.text().catch(() => "");
+        throw new Error(`POST /orders falhou: ${resp.status} ${resp.statusText} ${text}`);
+      }
+
+      try {
+        return await resp.json();
+      } catch {
+        return null;
+      }
+    })();
+
+    await toast.promise(submitPromise, {
+      loading: "Enviando seu pedido...",
+      success: "Pedido enviado com sucesso!",
+      error: "Falha ao enviar o pedido"
+    });
+  };
+
 
   return (
     <form
