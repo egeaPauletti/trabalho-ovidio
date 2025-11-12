@@ -58,7 +58,7 @@ export default function DashboardScreen() {
         <main className="w-screen flex flex-col gap-20 justify-center items-center my-10">
           <h1 className="text-3xl">Contatos feitos por clientes</h1>
           <div className="w-screen h-max flex justify-center">
-            <div className="w-full flex flex-wrap gap-20 justify-center">
+            <div className="w-[90%] flex gap-20 justify-start overflow-x-scroll pb-2.5">
               {
                 dataUsers.map((user, index) => (
                   <div key={index}>
