@@ -1,13 +1,13 @@
-import { MdEmail, MdLock } from "react-icons/md";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Button from "../ui/Button";
-import Input from "../ui/Input";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { MdEmail, MdLock } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { loginFormSchema, type LoginFormData } from "../../schemas/loginFormSchema";
 import type { UserSchema } from "../../schemas/userSchema";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
-import { useState } from "react";
+import Button from "../ui/Button";
+import Input from "../ui/Input";
 
 export default function LoginForm({ onLogin }: { onLogin: () => void }) {
   const navigate = useNavigate();
@@ -43,6 +43,7 @@ export default function LoginForm({ onLogin }: { onLogin: () => void }) {
 
       sessionStorage.setItem("user_id", user.id.toString());
       sessionStorage.setItem("user_name", user.name);
+      sessionStorage.setItem("user_email", user.email);
       if (typeof window !== "undefined") {
         window.dispatchEvent(new Event("user-session-change"));
       }

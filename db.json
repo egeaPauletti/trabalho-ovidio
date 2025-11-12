@@ -55,6 +55,20 @@
       "city": "Sorocaba",
       "state": "SP",
       "message": "Poderia me enviar o orçamento atualizado, por favor?"
+    },
+    {
+      "id": "9d23eff4-cb56-4741-b351-8e27e369135e",
+      "firstName": "GABRIEL",
+      "lastName": "EGEA",
+      "email": "teste@email.com",
+      "phone": "15996123072",
+      "cep": "18085-480",
+      "street": "Rua Limeira",
+      "number": "637",
+      "district": "Jardim Leocádia",
+      "city": "Sorocaba",
+      "state": "SP",
+      "message": "qerdtftgyuhhjjnggbfdss"
     }
   ],
   "users": [
@@ -62,6 +76,12 @@
       "id": "2658",
       "name": "Gabriel",
       "email": "teste@email.com",
+      "password": "02020503"
+    },
+    {
+      "id": "cb20",
+      "name": "Gabriel",
+      "email": "admin@admin.com",
       "password": "02020503"
     }
   ]

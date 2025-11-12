@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import HamburgerMenu from "./NavbarMenu";
@@ -47,6 +48,11 @@ export default function Header() {
         { label: "Serviços", href: "#servicos" },
         { label: "Contato", href: "#contato" },
     ];
+    function Logout() {
+        sessionStorage.clear()
+        setUserName(null)
+        window.location.reload();
+    }
 
     return (
         <>
@@ -65,7 +71,10 @@ export default function Header() {
                     </nav>
                     {userName ? (
                         <div className="flex flex-col lg:flex-row lg:gap-10 gap-2.5 items-center">
-                            <span className="font-semibold text-primary text-base">Olá, {userName}</span>
+                            <div className="flex items-center text-primary gap-1">
+                                <span className="font-semibold text-primary text-base">Olá, {userName}</span>
+                                <button onClick={Logout} className="text-lg font-bold cursor-pointer hover:scale-120"><RiLogoutBoxRLine /></button>
+                            </div>
                             <Link to={"/dashboard"}>
                                 <Button text="Entrar" isFilled />
                             </Link>
