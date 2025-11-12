@@ -56,5 +56,13 @@
       "state": "SP",
       "message": "Poderia me enviar o orçamento atualizado, por favor?"
     }
+  ],
+  "users": [
+    {
+      "id": "2658",
+      "name": "Gabriel",
+      "email": "teste@email.com",
+      "password": "02020503"
+    }
   ]
 }

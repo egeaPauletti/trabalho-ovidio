@@ -82,7 +82,7 @@ export const ContactForm: React.FC = () => {
 
   return (
     <form
-      className="mx-auto max-w-3xl max-sm:w-screen space-y-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+      className="mx-20 max-w-3xl max-xl:w-screen space-y-6 rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
       onSubmit={handleSubmit(onSubmit)}
       autoComplete="off"
     >

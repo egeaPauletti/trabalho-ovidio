@@ -7,7 +7,7 @@ import { ContactForm } from "../../../components/Forms/ContactForm";
 export default function Contact() {
 
   return (
-    <section className="w-full h-dvh flex max-sm:flex-col max-sm:h-max justify-center items-center bg-white gap-15 py-10 mt-20">
+    <section className="w-full h-max flex max-xl:flex-col max-sm:h-max justify-center items-center bg-white gap-15 py-15 mt-20">
       <div className=" w-max h-max max-sm:w-screen flex flex-col gap-5 justify-center items-center">
         <h2 className="font-bold text-3xl max-sm:text-center">Entre em <span className="text-primary">Contato</span> Conosco</h2>
         <p className="max-sm:w-screen text-texts max-w-150 text-center max-sm:px-7">Transformamos ideias em soluções digitais sólidas, eficientes e escaláveis. Atuamos em todas as etapas do ciclo de vida do software — da concepção à manutenção — para garantir que sua empresa obtenha o máximo valor da tecnologia.</p>

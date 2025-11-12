@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import HamburgerMenu from "./NavbarMenu";
 
 export default function Header() {
     const [userName, setUserName] = useState<string | null>(null);
-    const navigate = useNavigate();
     useEffect(() => {
         const syncUserFromSession = () => {
             if (typeof window === "undefined") {
@@ -47,29 +46,30 @@ export default function Header() {
         { label: "Sobre", href: "#sobre" },
         { label: "Serviços", href: "#servicos" },
         { label: "Contato", href: "#contato" },
-        { label: "Admin", href: "/dashboard" },
     ];
 
     return (
         <>
-            <header className="max-sm:hidden w-[90%] h-max flex max-sm:flex-col max-sm:items-start justify-between px-10 items-center py-4 mt-10 z-100 fixed top-0 glasseffect">
+            <header className="max-sm:hidden w-[90%] h-max flex sm:flex-col max-sm:flex-col max-sm:items-start justify-between px-10 items-center py-4 mt-10 z-100 fixed top-0 glasseffect md:gap-5 xl:flex-row">
                 <figure className="flex justify-center font-bold text-3xl gap-10">
                     <h1 className="text-primary">RadTech</h1>
                 </figure>
                 <div className="flex max-sm:flex-col justify-center items-center text-base gap-10 text-black z-50">
                     <nav>
-                        <ul className="flex justify-center gap-8 cursor-pointer font-semibold">
+                        <ul className="flex justify-center gap-8 cursor-pointer font-semibold text-base">
                             <li className="underlineAnimation">Home</li>
                             <li className="underlineAnimation">Sobre nós</li>
                             <li className="underlineAnimation">Serviços</li>
                             <li className="underlineAnimation">Contato</li>
-                            {userName && (
-                                <li onClick={() => navigate("/dashboard")} className="underlineAnimation">Admin</li>
-                            )}
                         </ul>
                     </nav>
                     {userName ? (
-                        <span className="font-semibold text-primary">Olá, {userName}</span>
+                        <div className="flex flex-col lg:flex-row lg:gap-10 gap-2.5 items-center">
+                            <span className="font-semibold text-primary text-base">Olá, {userName}</span>
+                            <Link to={"/dashboard"}>
+                                <Button text="Entrar" isFilled />
+                            </Link>
+                        </div>
                     ) : (
                         <Link to={"/auth"}>
                             <Button text="Acessar" isFilled />

@@ -6,18 +6,18 @@ import aboutPanel1 from "@/assets/panels/panelAbout2.jpg";
 
 export default function About() {
   return (
-    <section className="w-full h-dvh max-sm:h-max flex max-sm:flex-col justify-center items-center bg-white gap-20 max-sm:py-20 max-sm:mb-20">
+    <section className="w-full h-dvh max-sm:h-max flex sm:flex-col xl:flex-row justify-center items-center bg-white gap-20 max-sm:py-20 max-sm:mb-20">
       <div className="flex flex-col w-max h-max gap-5">
-        <div className="flex justify-between max-sm:hidden">
+        <div className=" justify-between hidden xl:flex">
           <div className="flex justify-start items-end p-5 border border-black/5 bg-white size-50 rounded-lg shadow-lg font-semibold"><h2>Sobre Nós</h2></div>
           <img className="size-50 rounded-lg " src={aboutPanel1} alt="" />
         </div>
-        <div className="w-full max-sm:hidden">
+        <div className="w-full hidden xl:flex">
           <img className="flex-1 w-110 h-50 rounded-lg" src={aboutPanel2} alt="" />
         </div>
       </div>
       <div className="flex w-max flex-col gap-10 max-sm:w-dvw">
-        <div className="w-max h-max max-sm:w-full flex flex-col gap-10">
+        <div className="w-max h-max max-lg:w-full flex flex-col gap-10 max-lg:text-sm">
           <h2 className="font-bold text-3xl max-w-150 max-sm:px-2.5 max-sm:text-center">Profissionalize sua empresa com uma <span className="text-primary">página dedicada.</span></h2>
           <p className="max-w-150 text-justify max-sm:px-7">A RadTech é uma empresa brasileira de desenvolvimento de software fundada em 2018 em Belo Horizonte. Começamos como um time pequeno de três desenvolvedores com uma ideia simples: transformar processos complexos em produtos digitais intuitivos e de alto impacto. Desde então, crescemos para uma equipe multidisciplinar de 45 pessoas — designers, engenheiros de software, product managers e especialistas em dados — e já entregamos mais de 120 soluções para clientes de setores como saúde, educação, logística e fintechs.</p>
         </div>
