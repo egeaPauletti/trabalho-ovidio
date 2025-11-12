@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   return (
     <div className="flex flex-col gap-2.5">
       <label htmlFor={inputId} className="font-semibold text-black">{text}</label>
-      <div className="w-100 flex gap-2 items-center bg-white p-2 duration-300 delay-200 rounded-md border-black/10 border">
+      <div className="w-auto flex gap-2 items-center bg-white p-2 duration-300 delay-200 rounded-md border-black/10 border">
         <figure className="text-primary/50">
           {icon}
         </figure>

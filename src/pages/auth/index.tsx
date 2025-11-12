@@ -1,26 +1,28 @@
-import { MdArrowBack } from "react-icons/md";
-import Button from "../../components/ui/Button";
 
-import { Link } from "react-router-dom";
-import background from "../../assets/peakpx.jpg";
 import LoginForm from "../../components/Forms/LoginForm";
+import BackButton from "../../components/ui/backButton";
+import BackgroundImage from "../../components/ui/BackgroundImage";
 
 export default function AuthScreen() {
   return (
-    <div className="w-dvw h-dvh flex bg-contain max-sm:overflow-hidden" style={{ backgroundImage: `url(${background})` }} >
-      <div className="absolute top-10 left-10 max-sm:top-5 max-sm:left-5">
-        <Link to={"/"}>
-          <Button text="Voltar" icon={<MdArrowBack />} isFilled />
-        </Link>
-      </div>
-      <div className="w-full h-full flex max-sm:flex-col items-center justify-center bg-white/60"
-      >
-        <figure className="flex flex-col flex-1 items-center justify-center gap-10 max-sm:hidden">
-          <h1 className="text-2xl font-bold w-150 max-sm:text-center">Area do Admin</h1>
-          <p className="w-150 text-justify max-sm:w-screen max-sm:px-10 max-sm:text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga maxime optio aperiam omnis debitis quibusdam similique tenetur, ab distinctio numquam dolore modi expedita doloribus facere deserunt provident magni magnam dolorem.</p>
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden py-16 px-4 sm:px-6 lg:px-10">
+      <BackgroundImage />
+      
+      <div className="absolute inset-0 -z-10 bg-black/60" />
+      <BackButton />
+
+      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center justify-center gap-12 lg:flex-row lg:items-stretch">
+
+        <figure className="flex max-w-xl flex-1 flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+          <h1 className="text-3xl font-bold lg:text-4xl">Área do Admin</h1>
+          <p className="text-sm leading-relaxed sm:text-base">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga maxime optio aperiam omnis debitis quibusdam similique tenetur, ab distinctio numquam dolore modi expedita doloribus facere deserunt provident magni magnam dolorem.
+          </p>
         </figure>
-        <LoginForm />
+        <div className="w-full max-w-md">
+          <LoginForm />
+        </div>
       </div>
-    </div >
+    </section>
   )
 }
