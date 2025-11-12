@@ -12,9 +12,9 @@ export default function Services() {
         <p className="text-texts max-w-200 text-center max-sm:px-7">Transformamos ideias em soluções digitais sólidas, eficientes e escaláveis. Atuamos em todas as etapas do ciclo de vida do software — da concepção à manutenção — para garantir que sua empresa obtenha o máximo valor da tecnologia.</p>
       </div>
       <div className="flex gap-20 max-sm:flex-col">
-        <CardServices number="01" icon={<RiPagesLine />} title="Criamos sua pagina!" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fuga adipisicing elit" />
-        <CardServices number="02" icon={<GrSystem />} title="Sistemas Completos" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fuga adipisicing elit" />
-        <CardServices number="03" icon={<IoRocketOutline />} title="Impulsionamos seu Software" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse fuga adipisicing elit" />
+        <CardServices number="01" icon={<RiPagesLine />} title="Criamos sua pagina!" text="Transforme seu negócio em uma presença digital de sucesso, com um site que reflete a essência da sua marca, atrai clientes e gera resultados reais. Dê o próximo passo rumo ao crescimento: leve sua ideia para o mundo online e destaque-se da concorrência" />
+        <CardServices number="02" icon={<GrSystem />} title="Sistemas Completos" text="Desenvolvemos sistemas completos capazes de atender a qualquer tipo de necessidade,Cada solução é pensada para integrar processos, otimizar tarefas e proporcionar uma experiência fluida, tanto para empresas quanto para clientes." />
+        <CardServices number="03" icon={<IoRocketOutline />} title="Impulsionamos seu Software" text="Impulsionamos seu software aprimorando tudo o que ele já oferece, potencializando suas funcionalidades e garantindo que cada recurso seja utilizado da melhor forma possível. Nosso objetivo é tornar seu software mais eficiente, responsivo e capaz de gerar resultados reais para o seu negócio" />
       </div>
     </section>
   )
