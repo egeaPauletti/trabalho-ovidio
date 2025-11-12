@@ -63,10 +63,10 @@ export default function Header() {
                 <div className="flex max-sm:flex-col justify-center items-center text-base gap-10 text-black z-50">
                     <nav>
                         <ul className="flex justify-center gap-8 cursor-pointer font-semibold text-base">
-                            <li className="underlineAnimation">Home</li>
-                            <li className="underlineAnimation">Sobre nós</li>
-                            <li className="underlineAnimation">Serviços</li>
-                            <li className="underlineAnimation">Contato</li>
+                            <a href="#"><li className="underlineAnimation">Home</li></a>
+                            <a href="#about"><li className="underlineAnimation">Sobre nós</li></a>
+                            <a href="#services"><li className="underlineAnimation">Serviços</li></a>
+                            <a href="#contact"><li className="underlineAnimation">Contato</li></a>
                         </ul>
                     </nav>
                     {userName ? (
@@ -90,6 +90,7 @@ export default function Header() {
                 <div className="w-full h-max flex justify-between items-center">
                     <div>
                         <HamburgerMenu items={menuItems} />
+
                     </div>
                 </div>
                 <figure className="w-full flex font-bold text-3xl text-center">

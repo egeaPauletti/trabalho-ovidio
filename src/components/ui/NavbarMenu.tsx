@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "./Button";
 
 interface MenuItem {
   label: string;
@@ -69,6 +71,9 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ items }) => {
               </a>
             </li>
           ))}
+          <Link to={"/auth"}>
+            <Button text="Acessar" isFilled />
+          </Link>
         </ul>
       </div>
     </nav>
