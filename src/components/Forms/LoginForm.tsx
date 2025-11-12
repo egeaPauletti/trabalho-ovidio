@@ -42,6 +42,10 @@ export default function LoginForm({ onLogin }: { onLogin: () => void }) {
       }
 
       sessionStorage.setItem("user_id", user.id.toString());
+      sessionStorage.setItem("user_name", user.name);
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new Event("user-session-change"));
+      }
       toast.success("Login realizado com sucesso");
       navigate("/dashboard");
 
