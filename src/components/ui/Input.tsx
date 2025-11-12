@@ -14,12 +14,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   const inputId = id ?? name
 
   return (
-    <div className="flex flex-col gap-2.5">
+    <div className="flex flex-col">
       <label htmlFor={inputId} className="font-semibold text-black">{text}</label>
       <div className="w-auto flex gap-2 items-center bg-white p-2 duration-300 delay-200 rounded-md border-black/10 border">
-        <figure className="text-primary/50">
+        <div className="flex items-center text-primary/50">
           {icon}
-        </figure>
+        </div>
         <input
           id={inputId}
           ref={ref}

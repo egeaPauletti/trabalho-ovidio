@@ -1,9 +1,18 @@
 
+import { useState } from "react";
 import LoginForm from "../../components/Forms/LoginForm";
-import BackButton from "../../components/ui/backButton";
 import BackgroundImage from "../../components/ui/BackgroundImage";
+import RegisterForm from "../../components/Forms/RegisterForm";
+import BackButton from "../../components/ui/BackButton";
 
 export default function AuthScreen() {
+
+  const [isRegister, setIsRegister] = useState(false);
+
+  const handleRegister = () => {
+    setIsRegister(!isRegister);
+  }
+  
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden py-16 px-4 sm:px-6 lg:px-10">
       <BackgroundImage />
@@ -20,7 +29,7 @@ export default function AuthScreen() {
           </p>
         </figure>
         <div className="w-full max-w-md">
-          <LoginForm />
+          {isRegister ? <RegisterForm onRegister={handleRegister} /> : <LoginForm onLogin={handleRegister} />}
         </div>
       </div>
     </section>
